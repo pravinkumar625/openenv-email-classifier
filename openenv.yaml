@@ -1,0 +1,25 @@
+name: email-classifier-env
+
+endpoints:
+  reset: /reset
+  step: /step
+  state: /state
+
+actions:
+  type: string
+  values: ["spam", "not_spam"]
+
+observations:
+  type: object
+  properties:
+    email:
+      type: string
+
+reward:
+  type: float
+  range: [0.0, 1.0]
+
+tasks:
+  - id: easy
+  - id: medium
+  - id: hard
